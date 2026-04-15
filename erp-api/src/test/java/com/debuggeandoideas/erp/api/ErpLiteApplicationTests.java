@@ -1,4 +1,4 @@
-package com.debuggeandoideas.erp.lite;
+package com.debuggeandoideas.erp.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,14 +1,22 @@
 # ERP Lite
 
-Aplicacion base para un ERP ligero construida con Spring Boot, Gradle y Java 25.
+Aplicacion base para un ERP ligero construida como proyecto Gradle multi-modulo con Spring Boot y Java 25.
 
 ## Stack
 
 - Java 25
-- Spring Boot 4.0.5
+- Spring Boot 4.0.0
 - Gradle
-- Spring Web
-- Spring Boot DevTools
+- Spring Web en `erp-api`
+- Lombok compartido en todos los modulos
+
+## Modulos
+
+- `erp-common`: utilidades y componentes compartidos
+- `erp-domain`: modelo y reglas de dominio
+- `erp-application`: casos de uso y orquestacion
+- `erp-infrastructure`: adaptadores e integraciones
+- `erp-api`: modulo ejecutable con Spring Boot y capa web
 
 ## Requisitos
 
@@ -18,7 +26,7 @@ Aplicacion base para un ERP ligero construida con Spring Boot, Gradle y Java 25.
 ## Ejecutar en local
 
 ```bash
-./gradlew bootRun
+./gradlew :erp-api:bootRun
 ```
 
 La aplicacion inicia por defecto en:
@@ -30,15 +38,17 @@ http://localhost:8900
 ## Ejecutar pruebas
 
 ```bash
-./gradlew test
+./gradlew clean build
 ```
 
-## Estructura base
+## Estructura
 
-- `src/main/java`: codigo fuente principal
-- `src/main/resources`: configuracion y recursos
-- `src/test/java`: pruebas
+- `erp-common/src/main/java`
+- `erp-domain/src/main/java`
+- `erp-application/src/main/java`
+- `erp-infrastructure/src/main/java`
+- `erp-api/src/main/java`
 
 ## Estado actual
 
-Este repositorio contiene la base inicial del proyecto. Todavia no incluye modulos funcionales del ERP.
+Este repositorio contiene la base estructural multi-modulo del ERP. Todavia no incluye modulos funcionales del negocio.
